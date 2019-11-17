@@ -8,7 +8,14 @@ mongoose.connect('mongodb+srv://desenvolvedor:desenvolvimento123@cluster0-gedzb.
 {
     useNewUrlParser: true,
     useUnifiedTopology: true
-})
+});
+
+// GET, POST, PUT, DELETE
+
+//req.query = Acessar query params (para filtros)
+// req.params = Acessar route params (para edição e delete)
+// req.body = Acess requisition body (for creation and edition)
+
 
 // Necessário para requisições em JSON
 app.use(express.json());
