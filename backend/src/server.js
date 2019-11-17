@@ -1,14 +1,20 @@
 const express = require('express');
+const mongoose = require('mongoose');
+const routes = require('./routes');
 
 const app = express();
 
-app.get('/', (req, res)=>{
+mongoose.connect('mongodb+srv://desenvolvedor:desenvolvimento123@cluster0-gedzb.mongodb.net/aircnc?retryWrites=true&w=majority',
+{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
 
-    return res.json({
-        nome: 'Gabriel',
-        email: 'gabarros17@gmail.com'
-    })
+// Necessário para requisições em JSON
+app.use(express.json());
 
-});
+// Usando o Router
+app.use(routes);
+
 
 app.listen(3000);
