@@ -4,7 +4,8 @@ module.exports = {
 
     async store(req, res){
 
-        return res.json({
+        console.log(req.body);
+        console.log('Foto', req.file);        return res.json({
             ok: true
         });
     }
