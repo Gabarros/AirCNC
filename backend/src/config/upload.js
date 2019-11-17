@@ -12,8 +12,10 @@ module.exports = {
         destination: path.resolve(__dirname,'..', '..', 'uploads'),
         // Catching the File Name of the picture
         filename: (req, file, callback)=>{
+            const ext = path.extname(file.originalname);
+            const name = path.basename(file.originalname, ext);
 
-            callback(null, `${file.fieldname}-${Date.now()}${path.extname(file.originalname)}`);
+            callback(null, `${name}-${Date.now()}${ext}`);
         }
     }),
 

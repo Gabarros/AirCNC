@@ -15,4 +15,10 @@ module.exports = {
 
         return res.json({user});
     },
+    async index(req, res){
+        let users = await User.find();
+
+        return res.json({users});
+
+        }
 };
